@@ -2,7 +2,10 @@ chrome.browserAction.onClicked.addListener(function(tab) {
   // Send a message to the active tab
   chrome.tabs.query({currentWindow: true}, function(tabs) {
   	var foundSelected = false;
-  	for(var i = 0; i < tabs.length; i++){
+  	for(var i = 0; i <= tabs.length; i++){
+  	  if(i == tabs.length){
+  	  	i = 0;
+  	  }	
   	  if (tabs[i].active){
         foundSelected = true;
       }
